@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Dashboard | Solent A</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <style>
+    /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+    .row.content {height: 550px}
+    
+    /* Set gray background color and 100% height */
+    .sidenav {
+      background-color: #f1f1f1;
+      height: 100vh;
+    }
+    .interactions{
+      padding: 10px;
+      margin-bottom: 10px;
+      margin-left: 5px;
+      margin-right: 5px;
+      margin-top: 10px;
+      /*margin: 5px;*/
+      background-color: powderblue;
+    }
+
+    .top-spot{
+      padding: 10px;
+      margin-bottom: 10px;
+      margin-left: 5px;
+      margin-right: 5px;
+      margin-top: 20px;
+      background-color: powderblue;
+    }
+    .map-menu{
+      margin: 0 auto;
+    }
+    .img-responsive{
+      padding: 10px;
+      margin: 0 auto;
+    }
+    .but{
+      margin-top: 10px;
+      margin-left: 10px;
+
+    }
+
+
+    /* On small screens, set height to 'auto' for the grid */
+    @media screen and (max-width: 767px) {
+      .row.content {height: auto;} 
+    }
+
+  </style>
+  <script>
+      function everyone()
+      {
+          var img = document.getElementById("image");
+          img.src="image1.gif";
+          return false;
+      }
+      function temperature()
+      {
+          var img = document.getElementById("image");
+          img.src="Heat-Map-temp.jpg";
+          return false;
+      }
+      function lightLevel()
+      {
+          var img = document.getElementById("image");
+          img.src="heat-map.png";
+          return false;
+      }
+  </script>
+</head>
+<body>
+
+
+<div class="container-fluid">
+  <div class="row content">
+    <div class="col-sm-3 sidenav hidden-xs">
+      <img class="img-responsive" src="profile.ico">
+      <h2>Your Profile</h2>
+      <ul class="nav nav-pills nav-stacked">
+        <li class="active"><a href="index.html">Dashboard</a></li>
+        <li><a href="settings.html">Settings</a></li>
+      </ul><br>
+      <div class="content">
+        <div class="interactions">
+          <h4>Top Interactions</h4>
+          <ul class="list-unstyled">
+            <a><li>John Doe</li></a>
+            <a><li>Jane Doe</li></a>
+            <a><li>Joe Schmoe</li></a>
+          </ul>
+          </div>
+        <span class="border border-danger">
+          <div class="top-spot">
+            <h4>Most Frequented Areas</h4>
+            <ul class="list-unstyled">
+              <li>Desk Area 1</li>
+              <li>Sofa Area 3</li>
+              <li>Desk Area 7</li>
+              <li>Cafe Area 1</li>
+              <li>Meeting Room 2</li>
+            </ul>
+          </div>
+        </span>
+      </div>
+    </div>
+    <br>
+    <div class="col-sm-9">
+      <div class="well">
+        <nav class="navbar navbar-default">
+          <div class="container-fluid">
+            <div class="navbar-header">
+              <h4>Map Options</h4>
+            </div>
+            <div class="map-menu">
+              <ul class="nav navbar-nav">
+                <li><button class="but">Me</button></li>
+                <li><button class="but" id="all" onclick="everyone();">Everyone</button></li>
+                <li><button class="but" id="temp" onclick="temperature();">Temperature</button></li>
+                <li><button class="but">Humidity</button></li>
+                <li><button class="but" id="clickme" onclick="lightLevel();">Light Level</button></li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
+      <div class="well">
+        <p><img id="image" width="900vw" src="image1.gif"></p>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
+

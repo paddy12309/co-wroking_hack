@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Settings | Solent A</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+		<style>
+.row.content{
+	height: 550px;
+}
+
+	.sidenav{
+		background-color: #f1f1f1;
+		height: 100vh;
+	}
+	.interactions{
+		padding: 10px;
+		margin-bottom: 10px;
+		margin-left: 5px;
+		margin-right: 5px;
+		margin-top: 10px;
+		background-color: powderblue;
+	}
+
+	.top-spot{
+		padding: 10px;
+		margin-bottom: 10px;
+		margin-left: 5px;
+		margin-right: 5px;
+		margin-top: 20px;
+		background-color: powderblue;
+	}
+	.map-menu{
+		margin: 0 auto;
+	}
+	.img-responsive{
+		padding: 10px;
+		margin: 0 auto;
+	}
+
+	.slidercontainer{
+		width: 100%;
+	}
+
+	.slider{
+		-webkit-appearance: none;
+		width: 100%;
+		height: 25px;
+		background: #d3d3d3;
+		outline: none;
+		opacity: 0.7;
+		-webkit-transition: .2s;
+		transition: opacity .2s;
+	}
+
+	.slider_range_l{
+		width: 50px;
+		display: block inline;
+		float: left;
+	}
+
+	.slider_range_r{
+		width: 50px;
+		display: block inline;
+		float: right;
+		text-align: right;
+	}
+
+	.tooltiptext{
+		z-index: 999;
+		background-color: blue;
+	}
+
+	@media screen and (max-width: 767px){
+		.row.content {height: auto; 
+		}
+
+		</style>
+		<script>
+			function temperature(){
+				var tooltip = document.getElementById('temperature').value;
+				var temptool = document.getElementById('temperature').innerHTML = "tooltip";
+				alert(tooltip)
+			}
+
+			function lighting(){
+				var tooltip = document.getElementById('lighting').value;
+				alert(tooltip);
+			}
+
+			function occupancy(){
+				var tooltip = document.getElementById('occupancy').value;
+				alert(tooltip);
+			}
+		</script>
+	</head>
+	<body> 
+		<div class="container-fluid">
+			<div class="row content">
+				<div class="col-sm-3 sidenav hidden-xs">
+					<img class="img-responsive" src="profile.ico">
+					<h2>Your Profile</h2>
+					<ul class="nav nav-pills nav-stacked">
+						<li><a href="index.html">Dashboard</a></li>
+						<li class="active"><a href="settings.html">Settings</a></li>
+					</ul><br>
+					<div class="content">
+						<div class="interactions">
+							<h4>Top Interactions</h4>
+							<ul class="list-unstyled">
+								<li><a href="#">John Doe</a></li>
+								<li><a href="#">Jane Doe</a></li>
+								<li><a href="#">Joe Schmoe</a></li>
+							</ul>
+						</div>
+						<span class="border border-danger">
+							<div class="top-spot">
+								<h4>Most Frequented Areas</h4>
+								<ul class="list-unstyled">
+									<li>Desk Area 1</li>
+									<li>Sofa Area 3</li>
+									<li>Desk Area 7</li>
+									<li>Cafe Area 1</li>
+									<li>Meeting Room 2</li>
+								</ul>
+							</div>
+						</span>
+					</div>
+				</div>
+				<br>
+				<div class="col-sm-9">
+					<div class="well">
+						<nav class="navbar navbar-default">
+							<div class="container-fluid">
+								<div class="navbar-header">
+									<h4>Personal Preferences</h4>
+								</div>
+							</div>
+						</nav>
+						<h4>Temperature</h4> 
+						<div class="slidecontainer">
+							<p>What temperature do you prefer your workspace to be?</p>
+							<input type="range" min="16" max="28" value="2" class="slider" id="temperature" onchange="temperature()">
+							<p class="slider_range_l">16°</p>
+							<p class="slider_range_r">28°</p>
+							<span class="tooltiptext"></span>
+						</div>
+						<br>
+						<h4>Light Levels</h4> 
+						<div class="slidecontainer">
+							<p>How bright do you prefer your working environment?</p>
+							<input type="range" min="1" max="100" value="50" class="slider" id="lighting" onchange="lighting()">
+							<p class="slider_range_l">0 lux</p>
+							<p class="slider_range_r">100 lux</p>
+						</div>
+						<br>
+						<h4>Room Occupancy</h4> 
+						<div class="slidecontainer">
+							<p>What is the maximum number of people you like to work around?</p>
+							<input type="range" min="0" max="31" value="18" class="slider" id="occupancy" onchange="occupancy()">
+							<p class="slider_range_l">0</p>
+							<p class="slider_range_r">>30</p>
+						</div>
+						<br>
+						<br>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
+
